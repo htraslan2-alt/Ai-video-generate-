@@ -1,0 +1,396 @@
+:root {
+  --font-body: 'Inter', sans-serif;
+  --font-special: 'Permanent Marker', cursive;
+  --yellow-primary: #facc15;
+  --yellow-secondary: #fde047;
+  --text-neutral-200: #e5e7eb;
+  --text-neutral-400: #9ca3af;
+  --text-neutral-500: #6b7280;
+  --text-neutral-700: #374151;
+}
+
+/* --- Banner --- */
+.app-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 0.75rem;
+  z-index: 50;
+  color: var(--text-neutral-400);
+  font-size: 0.875rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-body);
+}
+
+.app-banner-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.8fr auto 1.2fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.banner-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-neutral-500);
+  white-space: nowrap;
+  justify-self: start;
+}
+
+.banner-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2.5rem;
+  justify-self: end;
+}
+
+.remix-ideas {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-neutral-400);
+  text-align: right;
+  min-width: 0;
+  justify-self: center;
+}
+
+.remix-prompt {
+  flex-shrink: 0;
+}
+
+.remix-text-container {
+  position: relative;
+  width: 16rem;
+  height: 1.25rem;
+  overflow: hidden;
+}
+
+.remix-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-weight: 500;
+  color: var(--text-neutral-200);
+  white-space: nowrap;
+  text-align: left;
+}
+
+.banner-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.banner-button {
+  font-family: var(--font-special);
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  transition: transform 0.2s, background-color 0.2s, color 0.2s;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: var(--text-neutral-400);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.close-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-neutral-200);
+}
+
+.button-ai-studio {
+  color: black;
+  background-color: var(--yellow-primary);
+  box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.2);
+}
+
+.button-ai-studio:hover {
+  transform: scale(1.05) rotate(-2deg);
+  background-color: var(--yellow-secondary);
+}
+
+.button-gemini-chat {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.button-gemini-chat:hover {
+  transform: scale(1.05) rotate(2deg);
+  background-color: white;
+  color: black;
+}
+
+@media (max-width: 1024px) {
+  .app-banner-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  .remix-ideas {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-left { display: none; }
+  .app-banner-content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .banner-right {
+    justify-content: center;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 500px) {
+    .banner-buttons {
+        gap: 0.75rem;
+    }
+    .banner-button {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+/* Kelebihan kurung kurawal sebelumnya sudah dihapus di sini. */
+A cinematic shot of a samurai standing in the rain, anime styleA cinematic shot of a samurai standing in the rain, anime style<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Video Generator - Free + Image Support</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(255, 255, 255, 0.2);
+        border-top-color: #3b82f6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+      }
+      .fade-in {
+        animation: fadeIn 0.8s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#0e0f11] text-white font-['Inter'] flex items-center justify-center min-h-screen"
+  >
+    <div
+      class="bg-[#1a1b1e] border border-gray-800 p-8 rounded-2xl shadow-2xl w-full max-w-xl space-y-6 fade-in"
+    >
+      <h1 class="text-3xl font-bold text-center text-white tracking-tight">
+        🎬 AI Video Generator (Free)
+      </h1>
+      <p class="text-gray-400 text-center text-sm">
+        Powered by <span class="text-blue-400 font-semibold">Replicate</span> ·
+        Model: Zeroscope V2
+      </p>
+
+      <!-- Prompt Input -->
+      <textarea
+        id="prompt"
+        rows="4"
+        class="w-full bg-[#26282c] border border-gray-700 rounded-xl p-4 text-white placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition resize-none"
+        placeholder="Contoh: Anime boy walking through neon city at night"
+      ></textarea>
+
+      <!-- Image Upload -->
+      <div>
+        <p class="text-gray-400 text-sm mb-2">Gambar Referensi (Opsional)</p>
+        <label
+          for="fileInput"
+          class="cursor-pointer bg-[#26282c] hover:bg-[#2f3135] text-white font-semibold py-2 px-4 rounded-lg border border-gray-700 transition-colors duration-200"
+          >Pilih Gambar</label
+        >
+        <input
+          id="fileInput"
+          type="file"
+          accept="image/*"
+          class="hidden"
+        />
+        <span id="fileName" class="text-gray-500 text-sm ml-2">Tidak ada gambar</span>
+        <img
+          id="imgPreview"
+          class="hidden mt-4 rounded-lg max-h-48 border border-gray-700"
+        />
+      </div>
+
+      <!-- Button -->
+      <button
+        id="generate"
+        class="w-full bg-blue-600 hover:bg-blue-700 font-semibold py-3 rounded-xl transition-all duration-200 focus:ring-4 focus:ring-blue-400 focus:ring-opacity-50"
+      >
+        Generate Video
+      </button>
+
+      <!-- Loading Section -->
+      <div id="loading" class="hidden">
+        <div class="spinner"></div>
+        <p id="loading-text" class="text-center text-gray-400 text-sm">
+          Generating video...
+        </p>
+      </div>
+
+      <!-- Status -->
+      <div class="text-center">
+        <p id="status" class="text-gray-400 text-sm min-h-[24px]"></p>
+      </div>
+
+      <!-- Output Video -->
+      <video
+        id="outputVideo"
+        class="hidden w-full rounded-xl shadow-lg fade-in"
+        autoplay
+        loop
+        controls
+      ></video>
+    </div>
+
+    <script>
+      const btn = document.getElementById("generate");
+      const status = document.getElementById("status");
+      const video = document.getElementById("outputVideo");
+      const loading = document.getElementById("loading");
+      const loadingText = document.getElementById("loading-text");
+      const fileInput = document.getElementById("fileInput");
+      const fileName = document.getElementById("fileName");
+      const imgPreview = document.getElementById("imgPreview");
+
+      // 🧩 Masukkan token Replicate kamu di sini
+      const REPLICATE_API_TOKEN = "r8_cHOMsv0HnWZChfMjTcve59M5EP7Vs6s4RFAoVr8_cHOMsv0HnWZChfMjTcve59M5EP7Vs6s4RFAoV";
+
+      let uploadedImage = null;
+
+      fileInput.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (file) {
+          fileName.textContent = file.name;
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            imgPreview.src = e.target.result;
+            imgPreview.classList.remove("hidden");
+            uploadedImage = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      btn.addEventListener("click", async () => {
+        const prompt = document.getElementById("prompt").value.trim();
+        if (!prompt) {
+          alert("Masukkan prompt dulu!");
+          return;
+        }
+
+        status.textContent = "";
+        video.classList.add("hidden");
+        loading.classList.remove("hidden");
+        loadingText.textContent = "🧠 Menganalisis prompt kamu...";
+
+        try {
+          // Siapkan input
+          const body = {
+            version:
+              "8e76d39c5f6a2b53c9c9b2b6cf02adfca63f9b2b54a356f80d9e1a7ff8b6e19e",
+            input: {
+              prompt: prompt,
+              fps: 24,
+              num_frames: 48,
+              resolution: "576p",
+            },
+          };
+
+          // Jika ada gambar referensi
+          if (uploadedImage) {
+            body.input.image = uploadedImage;
+          }
+
+          const response = await fetch("https://api.replicate.com/v1/predictions", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Token ${REPLICATE_API_TOKEN}`,
+            },
+            body: JSON.stringify(body),
+          });
+
+          const data = await response.json();
+          const predictionUrl = data.urls.get;
+
+          let result;
+          let steps = ["🎬 Generating frames...", "🎨 Rendering...", "✨ Finishing up..."];
+          let i = 0;
+          const textInterval = setInterval(() => {
+            loadingText.textContent = steps[i % steps.length];
+            i++;
+          }, 2500);
+
+          while (true) {
+            const res = await fetch(predictionUrl, {
+              headers: { Authorization: `Token ${REPLICATE_API_TOKEN}` },
+            });
+            result = await res.json();
+            if (result.status === "succeeded" || result.status === "failed") break;
+            await new Promise((r) => setTimeout(r, 3000));
+          }
+
+          clearInterval(textInterval);
+          loading.classList.add("hidden");
+
+          if (result.status === "succeeded") {
+            video.src = result.output[0];
+            video.classList.remove("hidden");
+            status.textContent = "✅ Video generated successfully!";
+          } else {
+            status.textContent = "❌ Failed to generate video.";
+          }
+        } catch (err) {
+          console.error(err);
+          loading.classList.add("hidden");
+          status.textContent = "⚠️ Error generating video.";
+        }
+      });
+    </script>
+  </body>
+</html>
